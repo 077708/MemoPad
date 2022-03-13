@@ -23,6 +23,7 @@ namespace TreeView.Forms
         {
             InitializeComponent();
             this.noteServices = noteServices;
+            lblNameFile.Text = "File Name";
         }
 
         #region PanelContenedor
@@ -84,26 +85,44 @@ namespace TreeView.Forms
         private void btnNewFile_Click(object sender, EventArgs e)
         {
             rtxNotes.Text = string.Empty;
+            lblNameFile.Text = "File Name";
         }
 
         private void btnOpen_Click(object sender, EventArgs e) 
-        { 
-            (lblNameFile.Text, rtxNotes.Text) = noteServices.Reader();
+        {
+            try
+            {
+                (lblNameFile.Text, rtxNotes.Text) = noteServices.Reader();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnSaveAs_Click(object sender, EventArgs e)
         {
-            Note note = new Note()
+            try
             {
-                BlocNote = rtxNotes.Text,
-            };
+                lblNameFile.Text = "File Name";
 
-            noteServices.Add(note);
+                Note note = new Note()
+                {
+                    BlocNote = rtxNotes.Text,
+                };
+
+                lblNameFile.Text = noteServices.Save(lblNameFile.Text, note.BlocNote);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            rtxNotes.Text = string.Empty;
+            lblNameFile.Text = "File Name";
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -111,5 +130,32 @@ namespace TreeView.Forms
             Application.Exit();
         }
         #endregion
+
+        private void btnDeleteFile_Click(object sender, EventArgs e)
+        {
+            if (lblNameFile.Text == string.Empty)
+            {
+                MessageBox.Show("The file don't exist");
+                lblNameFile.Text = "File name";
+            }
+            else
+            {
+                noteServices.Delete(lblNameFile.Text);
+                rtxNotes.Text = string.Empty;
+                lblNameFile.Text = string.Empty;    
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                lblNameFile.Text = noteServices.Save(lblNameFile.Text, rtxNotes.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

@@ -63,6 +63,8 @@
             this.lblNameFile = new System.Windows.Forms.Label();
             this.rtxNotes = new System.Windows.Forms.RichTextBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.btnDeleteFile = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.panelContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -75,6 +77,7 @@
             this.panelButtonsUpdate.SuspendLayout();
             this.panelButton.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDeleteFile)).BeginInit();
             this.SuspendLayout();
             // 
             // panelContenedor
@@ -248,10 +251,10 @@
             // 
             this.panelFont.Controls.Add(this.btnFontColor);
             this.panelFont.Controls.Add(this.btnFuente);
-            this.panelFont.Location = new System.Drawing.Point(181, 0);
+            this.panelFont.Location = new System.Drawing.Point(190, -6);
             this.panelFont.Name = "panelFont";
             this.panelFont.ShadowDecoration.Parent = this.panelFont;
-            this.panelFont.Size = new System.Drawing.Size(111, 75);
+            this.panelFont.Size = new System.Drawing.Size(101, 77);
             this.panelFont.TabIndex = 11;
             this.panelFont.Visible = false;
             this.panelFont.MouseLeave += new System.EventHandler(this.panelFont_MouseLeave);
@@ -264,10 +267,10 @@
             this.btnFontColor.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnFontColor.ForeColor = System.Drawing.Color.Coral;
             this.btnFontColor.HoverState.Parent = this.btnFontColor;
-            this.btnFontColor.Location = new System.Drawing.Point(-1, 30);
+            this.btnFontColor.Location = new System.Drawing.Point(5, 36);
             this.btnFontColor.Name = "btnFontColor";
             this.btnFontColor.ShadowDecoration.Parent = this.btnFontColor;
-            this.btnFontColor.Size = new System.Drawing.Size(154, 31);
+            this.btnFontColor.Size = new System.Drawing.Size(87, 31);
             this.btnFontColor.TabIndex = 9;
             this.btnFontColor.Text = "Font color";
             this.btnFontColor.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -280,10 +283,10 @@
             this.btnFuente.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnFuente.ForeColor = System.Drawing.Color.Coral;
             this.btnFuente.HoverState.Parent = this.btnFuente;
-            this.btnFuente.Location = new System.Drawing.Point(0, 0);
+            this.btnFuente.Location = new System.Drawing.Point(5, 6);
             this.btnFuente.Name = "btnFuente";
             this.btnFuente.ShadowDecoration.Parent = this.btnFuente;
-            this.btnFuente.Size = new System.Drawing.Size(153, 31);
+            this.btnFuente.Size = new System.Drawing.Size(87, 31);
             this.btnFuente.TabIndex = 8;
             this.btnFuente.Text = "Font style";
             this.btnFuente.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -294,10 +297,10 @@
             this.panelButtonsUpdate.Controls.Add(this.btnSelectAll);
             this.panelButtonsUpdate.Controls.Add(this.btnCut);
             this.panelButtonsUpdate.Controls.Add(this.btnPegar);
-            this.panelButtonsUpdate.Location = new System.Drawing.Point(122, 2);
+            this.panelButtonsUpdate.Location = new System.Drawing.Point(89, -9);
             this.panelButtonsUpdate.Name = "panelButtonsUpdate";
             this.panelButtonsUpdate.ShadowDecoration.Parent = this.panelButtonsUpdate;
-            this.panelButtonsUpdate.Size = new System.Drawing.Size(149, 127);
+            this.panelButtonsUpdate.Size = new System.Drawing.Size(175, 143);
             this.panelButtonsUpdate.TabIndex = 10;
             this.panelButtonsUpdate.Visible = false;
             this.panelButtonsUpdate.MouseLeave += new System.EventHandler(this.panelButtonsUpdate_MouseLeave);
@@ -310,7 +313,7 @@
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.Coral;
             this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(-5, 92);
+            this.guna2Button2.Location = new System.Drawing.Point(9, 101);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
             this.guna2Button2.Size = new System.Drawing.Size(154, 32);
@@ -326,7 +329,7 @@
             this.btnSelectAll.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSelectAll.ForeColor = System.Drawing.Color.Coral;
             this.btnSelectAll.HoverState.Parent = this.btnSelectAll;
-            this.btnSelectAll.Location = new System.Drawing.Point(0, 61);
+            this.btnSelectAll.Location = new System.Drawing.Point(9, 70);
             this.btnSelectAll.Name = "btnSelectAll";
             this.btnSelectAll.ShadowDecoration.Parent = this.btnSelectAll;
             this.btnSelectAll.Size = new System.Drawing.Size(154, 31);
@@ -342,7 +345,7 @@
             this.btnCut.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCut.ForeColor = System.Drawing.Color.Coral;
             this.btnCut.HoverState.Parent = this.btnCut;
-            this.btnCut.Location = new System.Drawing.Point(0, 30);
+            this.btnCut.Location = new System.Drawing.Point(9, 39);
             this.btnCut.Name = "btnCut";
             this.btnCut.ShadowDecoration.Parent = this.btnCut;
             this.btnCut.Size = new System.Drawing.Size(154, 31);
@@ -358,24 +361,25 @@
             this.btnPegar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnPegar.ForeColor = System.Drawing.Color.Coral;
             this.btnPegar.HoverState.Parent = this.btnPegar;
-            this.btnPegar.Location = new System.Drawing.Point(0, 0);
+            this.btnPegar.Location = new System.Drawing.Point(9, 9);
             this.btnPegar.Name = "btnPegar";
             this.btnPegar.ShadowDecoration.Parent = this.btnPegar;
-            this.btnPegar.Size = new System.Drawing.Size(153, 31);
+            this.btnPegar.Size = new System.Drawing.Size(154, 31);
             this.btnPegar.TabIndex = 8;
             this.btnPegar.Text = "Paste";
             this.btnPegar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // panelButton
             // 
+            this.panelButton.Controls.Add(this.btnSave);
             this.panelButton.Controls.Add(this.btnExit);
             this.panelButton.Controls.Add(this.btnSaveAs);
             this.panelButton.Controls.Add(this.btnOpen);
             this.panelButton.Controls.Add(this.btnNewFile);
-            this.panelButton.Location = new System.Drawing.Point(6, 3);
+            this.panelButton.Location = new System.Drawing.Point(-3, -6);
             this.panelButton.Name = "panelButton";
             this.panelButton.ShadowDecoration.Parent = this.panelButton;
-            this.panelButton.Size = new System.Drawing.Size(156, 126);
+            this.panelButton.Size = new System.Drawing.Size(166, 175);
             this.panelButton.TabIndex = 9;
             this.panelButton.Visible = false;
             this.panelButton.MouseLeave += new System.EventHandler(this.guna2Panel1_MouseLeave);
@@ -388,12 +392,12 @@
             this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnExit.ForeColor = System.Drawing.Color.Coral;
             this.btnExit.HoverState.Parent = this.btnExit;
-            this.btnExit.Location = new System.Drawing.Point(0, 92);
+            this.btnExit.Location = new System.Drawing.Point(5, 129);
             this.btnExit.Name = "btnExit";
             this.btnExit.ShadowDecoration.Parent = this.btnExit;
             this.btnExit.Size = new System.Drawing.Size(154, 31);
             this.btnExit.TabIndex = 11;
-            this.btnExit.Text = "Exit";
+            this.btnExit.Text = "Close file";
             this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -405,7 +409,7 @@
             this.btnSaveAs.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSaveAs.ForeColor = System.Drawing.Color.Coral;
             this.btnSaveAs.HoverState.Parent = this.btnSaveAs;
-            this.btnSaveAs.Location = new System.Drawing.Point(0, 61);
+            this.btnSaveAs.Location = new System.Drawing.Point(5, 98);
             this.btnSaveAs.Name = "btnSaveAs";
             this.btnSaveAs.ShadowDecoration.Parent = this.btnSaveAs;
             this.btnSaveAs.Size = new System.Drawing.Size(154, 31);
@@ -422,7 +426,7 @@
             this.btnOpen.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnOpen.ForeColor = System.Drawing.Color.Coral;
             this.btnOpen.HoverState.Parent = this.btnOpen;
-            this.btnOpen.Location = new System.Drawing.Point(0, 30);
+            this.btnOpen.Location = new System.Drawing.Point(5, 36);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.ShadowDecoration.Parent = this.btnOpen;
             this.btnOpen.Size = new System.Drawing.Size(154, 31);
@@ -439,10 +443,10 @@
             this.btnNewFile.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnNewFile.ForeColor = System.Drawing.Color.Coral;
             this.btnNewFile.HoverState.Parent = this.btnNewFile;
-            this.btnNewFile.Location = new System.Drawing.Point(0, 0);
+            this.btnNewFile.Location = new System.Drawing.Point(5, 6);
             this.btnNewFile.Name = "btnNewFile";
             this.btnNewFile.ShadowDecoration.Parent = this.btnNewFile;
-            this.btnNewFile.Size = new System.Drawing.Size(153, 31);
+            this.btnNewFile.Size = new System.Drawing.Size(154, 31);
             this.btnNewFile.TabIndex = 8;
             this.btnNewFile.Text = "New File";
             this.btnNewFile.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -486,6 +490,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(51)))), ((int)(((byte)(32)))));
+            this.panel2.Controls.Add(this.btnDeleteFile);
             this.panel2.Controls.Add(this.lblNameFile);
             this.panel2.Controls.Add(this.rtxNotes);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -526,6 +531,35 @@
             this.imageList1.Images.SetKeyName(0, "CARPET.png");
             this.imageList1.Images.SetKeyName(1, "icons8-new-file-64.png");
             // 
+            // btnDeleteFile
+            // 
+            this.btnDeleteFile.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteFile.Image")));
+            this.btnDeleteFile.Location = new System.Drawing.Point(545, 459);
+            this.btnDeleteFile.Name = "btnDeleteFile";
+            this.btnDeleteFile.ShadowDecoration.Parent = this.btnDeleteFile;
+            this.btnDeleteFile.Size = new System.Drawing.Size(26, 35);
+            this.btnDeleteFile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnDeleteFile.TabIndex = 5;
+            this.btnDeleteFile.TabStop = false;
+            this.btnDeleteFile.Click += new System.EventHandler(this.btnDeleteFile_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.CheckedState.Parent = this.btnSave;
+            this.btnSave.CustomImages.Parent = this.btnSave;
+            this.btnSave.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(27)))), ((int)(((byte)(9)))));
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSave.ForeColor = System.Drawing.Color.Coral;
+            this.btnSave.HoverState.Parent = this.btnSave;
+            this.btnSave.Location = new System.Drawing.Point(5, 67);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.ShadowDecoration.Parent = this.btnSave;
+            this.btnSave.Size = new System.Drawing.Size(154, 31);
+            this.btnSave.TabIndex = 12;
+            this.btnSave.Text = "Save";
+            this.btnSave.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // FrmNotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -555,6 +589,7 @@
             this.panelButton.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDeleteFile)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -593,5 +628,7 @@
         private Guna.UI2.WinForms.Guna2Panel panelFont;
         private Guna.UI2.WinForms.Guna2Button btnFuente;
         private Guna.UI2.WinForms.Guna2Button btnFontColor;
+        private Guna.UI2.WinForms.Guna2PictureBox btnDeleteFile;
+        private Guna.UI2.WinForms.Guna2Button btnSave;
     }
 }
