@@ -35,6 +35,7 @@ namespace AppCore.Processes
                     {
                         foreach (var i in item.GetFiles())
                         {
+                            if (i.Extension.Equals(""))
                             nodeToAddTo.Nodes.Add(new TreeNode(i.Name));
                         }
                     }

@@ -24,6 +24,7 @@ namespace TreeView.Forms
             InitializeComponent();
             this.noteServices = noteServices;
             lblNameFile.Text = "File Name";
+            lblAppName.Text = "MemoPad";
         }
 
         #region PanelContenedor
@@ -77,9 +78,20 @@ namespace TreeView.Forms
         #endregion
 
         #region Files
+
         private void btnSelectDirectory_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"{FolderBrowser.FolderBw()}");
+            try
+            {
+                treeView1.Nodes.Clear();
+                IDirectory directory = new AppCore.Processes.View();
+                DirectoryInfo directoryInfo = new DirectoryInfo(FolderBrowser.FolderBw());
+                treeView1.Nodes.Add(directory.PopulateTreeView(directoryInfo));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnNewFile_Click(object sender, EventArgs e)
@@ -129,20 +141,26 @@ namespace TreeView.Forms
         {
             Application.Exit();
         }
-        #endregion
 
         private void btnDeleteFile_Click(object sender, EventArgs e)
         {
-            if (lblNameFile.Text == string.Empty)
+            try
             {
-                MessageBox.Show("The file don't exist");
-                lblNameFile.Text = "File name";
+                if (lblNameFile.Text.Equals("File Name"))
+                {
+                    MessageBox.Show("The file don't exist");
+                    lblNameFile.Text = "File Name";
+                }
+                else
+                {
+                    noteServices.Delete(lblNameFile.Text);
+                    rtxNotes.Text = string.Empty;
+                    lblNameFile.Text = "File Name";
+                }
             }
-            else
+            catch (Exception ex)
             {
-                noteServices.Delete(lblNameFile.Text);
-                rtxNotes.Text = string.Empty;
-                lblNameFile.Text = string.Empty;    
+                MessageBox.Show(ex.Message, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -157,5 +175,7 @@ namespace TreeView.Forms
                 MessageBox.Show(ex.Message, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        #endregion
     }
 }

@@ -19,7 +19,7 @@ namespace Infraestructure.Repository
         {
             if (path == null)
             {
-                return;
+                throw new Exception("El archivo no existe");
             }
 
             File.Delete(path);

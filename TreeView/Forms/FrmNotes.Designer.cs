@@ -35,7 +35,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblAppName = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnFont = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
@@ -52,6 +52,7 @@
             this.btnCut = new Guna.UI2.WinForms.Guna2Button();
             this.btnPegar = new Guna.UI2.WinForms.Guna2Button();
             this.panelButton = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             this.btnSaveAs = new Guna.UI2.WinForms.Guna2Button();
             this.btnOpen = new Guna.UI2.WinForms.Guna2Button();
@@ -60,11 +61,10 @@
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnDeleteFile = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblNameFile = new System.Windows.Forms.Label();
             this.rtxNotes = new System.Windows.Forms.RichTextBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.btnDeleteFile = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.panelContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -87,7 +87,7 @@
             this.panelContenedor.Controls.Add(this.pictureBox2);
             this.panelContenedor.Controls.Add(this.btnClose);
             this.panelContenedor.Controls.Add(this.pictureBox4);
-            this.panelContenedor.Controls.Add(this.label1);
+            this.panelContenedor.Controls.Add(this.lblAppName);
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelContenedor.Location = new System.Drawing.Point(0, 0);
             this.panelContenedor.Name = "panelContenedor";
@@ -140,15 +140,15 @@
             this.pictureBox4.TabIndex = 4;
             this.pictureBox4.TabStop = false;
             // 
-            // label1
+            // lblAppName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(35, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 18);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "<None>";
+            this.lblAppName.AutoSize = true;
+            this.lblAppName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAppName.Location = new System.Drawing.Point(35, 8);
+            this.lblAppName.Name = "lblAppName";
+            this.lblAppName.Size = new System.Drawing.Size(62, 18);
+            this.lblAppName.TabIndex = 3;
+            this.lblAppName.Text = "<None>";
             // 
             // guna2Panel2
             // 
@@ -384,6 +384,23 @@
             this.panelButton.Visible = false;
             this.panelButton.MouseLeave += new System.EventHandler(this.guna2Panel1_MouseLeave);
             // 
+            // btnSave
+            // 
+            this.btnSave.CheckedState.Parent = this.btnSave;
+            this.btnSave.CustomImages.Parent = this.btnSave;
+            this.btnSave.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(27)))), ((int)(((byte)(9)))));
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSave.ForeColor = System.Drawing.Color.Coral;
+            this.btnSave.HoverState.Parent = this.btnSave;
+            this.btnSave.Location = new System.Drawing.Point(5, 67);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.ShadowDecoration.Parent = this.btnSave;
+            this.btnSave.Size = new System.Drawing.Size(154, 31);
+            this.btnSave.TabIndex = 12;
+            this.btnSave.Text = "Save";
+            this.btnSave.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // btnExit
             // 
             this.btnExit.CheckedState.Parent = this.btnExit;
@@ -474,8 +491,11 @@
             this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.treeView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeView1.ForeColor = System.Drawing.Color.Coral;
+            this.treeView1.ImageIndex = 1;
+            this.treeView1.ImageList = this.imageList1;
             this.treeView1.Location = new System.Drawing.Point(6, 41);
             this.treeView1.Name = "treeView1";
+            this.treeView1.SelectedImageIndex = 0;
             this.treeView1.Size = new System.Drawing.Size(249, 433);
             this.treeView1.TabIndex = 1;
             // 
@@ -499,11 +519,23 @@
             this.panel2.Size = new System.Drawing.Size(572, 500);
             this.panel2.TabIndex = 8;
             // 
+            // btnDeleteFile
+            // 
+            this.btnDeleteFile.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteFile.Image")));
+            this.btnDeleteFile.Location = new System.Drawing.Point(545, 459);
+            this.btnDeleteFile.Name = "btnDeleteFile";
+            this.btnDeleteFile.ShadowDecoration.Parent = this.btnDeleteFile;
+            this.btnDeleteFile.Size = new System.Drawing.Size(26, 35);
+            this.btnDeleteFile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnDeleteFile.TabIndex = 5;
+            this.btnDeleteFile.TabStop = false;
+            this.btnDeleteFile.Click += new System.EventHandler(this.btnDeleteFile_Click);
+            // 
             // lblNameFile
             // 
             this.lblNameFile.AutoSize = true;
             this.lblNameFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameFile.Location = new System.Drawing.Point(12, 6);
+            this.lblNameFile.Location = new System.Drawing.Point(14, 14);
             this.lblNameFile.Name = "lblNameFile";
             this.lblNameFile.Size = new System.Drawing.Size(66, 16);
             this.lblNameFile.TabIndex = 4;
@@ -530,35 +562,6 @@
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "CARPET.png");
             this.imageList1.Images.SetKeyName(1, "icons8-new-file-64.png");
-            // 
-            // btnDeleteFile
-            // 
-            this.btnDeleteFile.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteFile.Image")));
-            this.btnDeleteFile.Location = new System.Drawing.Point(545, 459);
-            this.btnDeleteFile.Name = "btnDeleteFile";
-            this.btnDeleteFile.ShadowDecoration.Parent = this.btnDeleteFile;
-            this.btnDeleteFile.Size = new System.Drawing.Size(26, 35);
-            this.btnDeleteFile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnDeleteFile.TabIndex = 5;
-            this.btnDeleteFile.TabStop = false;
-            this.btnDeleteFile.Click += new System.EventHandler(this.btnDeleteFile_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.CheckedState.Parent = this.btnSave;
-            this.btnSave.CustomImages.Parent = this.btnSave;
-            this.btnSave.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(27)))), ((int)(((byte)(9)))));
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSave.ForeColor = System.Drawing.Color.Coral;
-            this.btnSave.HoverState.Parent = this.btnSave;
-            this.btnSave.Location = new System.Drawing.Point(5, 67);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.ShadowDecoration.Parent = this.btnSave;
-            this.btnSave.Size = new System.Drawing.Size(154, 31);
-            this.btnSave.TabIndex = 12;
-            this.btnSave.Text = "Save";
-            this.btnSave.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // FrmNotes
             // 
@@ -602,7 +605,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.RichTextBox rtxNotes;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblAppName;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox btnClose;

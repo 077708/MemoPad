@@ -9,20 +9,25 @@ using System.Windows.Forms;
 
 namespace AppCore.Processes
 {
-    public class View : Directory, IDirectory
+    public class View : IDirectory
     {
-        public void PopulateTreeView(TreeView treeView1, string path)
+        public TreeNode PopulateTreeView(DirectoryInfo directoryInfo)
         {
-            TreeNode rootNode;
-            //Obtengo lo que tiene ese directorio ya sean carpetas u subcarpetas!
-            DirectoryInfo info = new DirectoryInfo($@"{path}");
-            if (info.Exists)
+            TreeNode root = new TreeNode(directoryInfo.Name);
+
+            foreach (var item in directoryInfo.GetDirectories())
             {
-                rootNode = new TreeNode(info.Name);
-                rootNode.Tag = info;
-                GetDirectories(info.GetDirectories(), rootNode);
-                treeView1.Nodes.Add(rootNode);
+                root.Nodes.Add(PopulateTreeView(item));
             }
+
+            foreach (var item in directoryInfo.GetFiles())
+            {
+                var test = item.Extension;
+                if (item.Extension == ".txt")
+                    root.Nodes.Add(item.Name);
+            }
+
+            return root;
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,6 @@ namespace AppCore.Contracts
 {
     public interface IDirectory
     {
-        void PopulateTreeView(TreeView treeView1, string path);
+        TreeNode PopulateTreeView(DirectoryInfo directoryInfo);
     }
 }
