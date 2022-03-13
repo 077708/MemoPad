@@ -1,0 +1,6 @@
+C:\Users\Paulo Mayorga\source\repos\TreeView\Domain\bin\Debug\Domain.dll
+C:\Users\Paulo Mayorga\source\repos\TreeView\Domain\bin\Debug\Domain.pdb
+C:\Users\Paulo Mayorga\source\repos\TreeView\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache
+C:\Users\Paulo Mayorga\source\repos\TreeView\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+C:\Users\Paulo Mayorga\source\repos\TreeView\Domain\obj\Debug\Domain.dll
+C:\Users\Paulo Mayorga\source\repos\TreeView\Domain\obj\Debug\Domain.pdb

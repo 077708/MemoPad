@@ -1,0 +1,9 @@
+C:\Users\Paulo Mayorga\source\repos\TreeView\Infraestructure\bin\Debug\Infraestructure.dll
+C:\Users\Paulo Mayorga\source\repos\TreeView\Infraestructure\bin\Debug\Infraestructure.pdb
+C:\Users\Paulo Mayorga\source\repos\TreeView\Infraestructure\obj\Debug\Infraestructure.csproj.AssemblyReference.cache
+C:\Users\Paulo Mayorga\source\repos\TreeView\Infraestructure\obj\Debug\Infraestructure.csproj.CoreCompileInputs.cache
+C:\Users\Paulo Mayorga\source\repos\TreeView\Infraestructure\obj\Debug\Infraestructure.dll
+C:\Users\Paulo Mayorga\source\repos\TreeView\Infraestructure\obj\Debug\Infraestructure.pdb
+C:\Users\Paulo Mayorga\source\repos\TreeView\Infraestructure\bin\Debug\Domain.dll
+C:\Users\Paulo Mayorga\source\repos\TreeView\Infraestructure\bin\Debug\Domain.pdb
+C:\Users\Paulo Mayorga\source\repos\TreeView\Infraestructure\obj\Debug\Infraestructure.csproj.CopyComplete

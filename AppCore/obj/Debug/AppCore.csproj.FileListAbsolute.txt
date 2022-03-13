@@ -1,0 +1,9 @@
+C:\Users\Paulo Mayorga\source\repos\TreeView\AppCore\bin\Debug\AppCore.dll
+C:\Users\Paulo Mayorga\source\repos\TreeView\AppCore\bin\Debug\AppCore.pdb
+C:\Users\Paulo Mayorga\source\repos\TreeView\AppCore\obj\Debug\AppCore.csproj.AssemblyReference.cache
+C:\Users\Paulo Mayorga\source\repos\TreeView\AppCore\obj\Debug\AppCore.csproj.CoreCompileInputs.cache
+C:\Users\Paulo Mayorga\source\repos\TreeView\AppCore\obj\Debug\AppCore.dll
+C:\Users\Paulo Mayorga\source\repos\TreeView\AppCore\obj\Debug\AppCore.pdb
+C:\Users\Paulo Mayorga\source\repos\TreeView\AppCore\bin\Debug\Domain.dll
+C:\Users\Paulo Mayorga\source\repos\TreeView\AppCore\bin\Debug\Domain.pdb
+C:\Users\Paulo Mayorga\source\repos\TreeView\AppCore\obj\Debug\AppCore.csproj.CopyComplete
