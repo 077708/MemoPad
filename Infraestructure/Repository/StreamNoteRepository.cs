@@ -12,35 +12,100 @@ namespace Infraestructure.Repository
 {
     public class StreamNoteRepository : INote
     {
-        private StreamWriter streamWriter;
-        private StreamReader streamReader;
+        private BinaryReader binaryReader;
+        private BinaryWriter binaryWriter;
 
-        public void Add(Note t)
+        public void Delete(string path)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Text files (.txt)|*.txt";
-            saveFileDialog.Title = "Open file";
-            saveFileDialog.ShowDialog();
-            string path = saveFileDialog.FileName;
+            if (path == null)
+            {
+                return;
+            }
 
-            streamWriter = File.AppendText(path);
-            streamWriter.Write(t.BlocNote);
-            streamWriter.Flush();
+            File.Delete(path);
         }
 
         public (string,string) Reader()
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Text files (.txt)|*.txt";
-            openFileDialog.Title = "Open file";
-            openFileDialog.ShowDialog();
-            openFileDialog.OpenFile();
+            try
+            {
+                using (OpenFileDialog openFileDialog = new OpenFileDialog())
+                {
+                    string Reader = "";
+                    openFileDialog.Filter = "Text files (.txt)|*.txt";
+                    openFileDialog.Title = "Open file";
 
-            string ruta = openFileDialog.FileName;
-            streamReader = File.OpenText(ruta);
-            string Rtx = streamReader.ReadToEnd();
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        using (FileStream fileStream = new FileStream(openFileDialog.FileName, FileMode.Open, FileAccess.Read))
+                        {
+                            binaryReader = new BinaryReader(fileStream);
+                            long length = binaryReader.BaseStream.Length;
 
-            return (ruta, Rtx);
+                            binaryReader.BaseStream.Seek(0, SeekOrigin.Begin);
+                            while (binaryReader.BaseStream.Position < length)
+                            {
+                                Reader = binaryReader.ReadString();
+                            }
+
+                            return (openFileDialog.FileName, Reader);
+                        }
+                    }
+                    else
+                    {
+                        throw new IOException("The file did not open");
+                    }
+                }
+
+            }
+            catch (IOException)
+            {
+                throw;
+            }
+        }
+
+        public string Save(string path, string note)
+        {
+            try
+            {
+                if (path.Equals("File Name"))
+                {
+                    SaveFileDialog saveFileDialog = new SaveFileDialog();
+                    saveFileDialog.Filter = "Text files (.txt)|*.txt";
+                    saveFileDialog.Title = "Open file";
+                    saveFileDialog.ShowDialog();
+                    path = saveFileDialog.FileName;
+                    if (path == null)
+                    {
+                        throw new IOException("Por favor seleccione la ruta");
+                    }
+                    else
+                    {
+                        using (FileStream fileStream = new FileStream(path, FileMode.Append, FileAccess.Write))
+                        {
+                            binaryWriter = new BinaryWriter(fileStream);
+                            binaryWriter.Write(note);
+                            binaryWriter.Close();
+                        }
+                    }
+                    return path;
+                }
+                else
+                {
+                    using (FileStream file = new FileStream(path, FileMode.Open, FileAccess.Write))
+                    {
+                        binaryWriter = new BinaryWriter(file);
+                        binaryWriter.BaseStream.Seek(0, SeekOrigin.End);
+                        binaryWriter.Write(note);
+                    }
+                    return path;
+                }
+
+            }
+            catch (IOException)
+            {
+                throw;
+            }
         }
     }
 }

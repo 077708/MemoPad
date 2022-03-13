@@ -8,8 +8,10 @@ namespace Domain.Contracts
 {
     public interface IColeccion<T> where T : class
     {
-        void Add(T t);
-
         (string, string) Reader();
+
+        void Delete(string path);
+
+        string Save(string path, string note); 
     }
 }

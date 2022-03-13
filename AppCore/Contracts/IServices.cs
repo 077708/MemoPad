@@ -8,8 +8,12 @@ namespace AppCore.Contracts
 {
     public interface IServices <T> where T : class
     {
-        void Add(T service);
 
         (string, string) Reader();
+
+        void Delete(string path);
+
+        string Save(string path, string note);
+
     }
 }

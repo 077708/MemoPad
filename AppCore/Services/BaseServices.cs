@@ -16,14 +16,20 @@ namespace AppCore.Services
         {
             this.coleccion = coleccion;
         }
-        public void Add(T service)
+
+        public void Delete(string path)
         {
-            coleccion.Add(service);
+            coleccion.Delete(path);
         }
 
         public (string, string) Reader()
         {
             return coleccion.Reader();
+        }
+
+        public string Save(string path, string note)
+        {
+            return coleccion.Save(path, note);
         }
     }
 }
