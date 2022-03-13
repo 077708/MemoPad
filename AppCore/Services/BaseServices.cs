@@ -27,6 +27,11 @@ namespace AppCore.Services
             return coleccion.Reader();
         }
 
+        public (string, string) Reader(string path)
+        {
+            return coleccion.Reader(path);
+        }
+
         public string Save(string path, string note)
         {
             return coleccion.Save(path, note);

@@ -491,13 +491,14 @@
             this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.treeView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeView1.ForeColor = System.Drawing.Color.Coral;
-            this.treeView1.ImageIndex = 1;
+            this.treeView1.ImageIndex = 0;
             this.treeView1.ImageList = this.imageList1;
             this.treeView1.Location = new System.Drawing.Point(6, 41);
             this.treeView1.Name = "treeView1";
             this.treeView1.SelectedImageIndex = 0;
             this.treeView1.Size = new System.Drawing.Size(249, 433);
             this.treeView1.TabIndex = 1;
+            this.treeView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseDoubleClick);
             // 
             // panel3
             // 
@@ -578,6 +579,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmNotes";
             this.Text = "dfs";
+            this.Load += new System.EventHandler(this.FrmNotes_Load);
             this.panelContenedor.ResumeLayout(false);
             this.panelContenedor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

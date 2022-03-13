@@ -12,6 +12,8 @@ namespace Domain.Contracts
 
         void Delete(string path);
 
-        string Save(string path, string note); 
+        string Save(string path, string note);
+
+        (string, string) Reader(string path);
     }
 }

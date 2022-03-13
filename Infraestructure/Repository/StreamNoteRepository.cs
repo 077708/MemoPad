@@ -64,6 +64,24 @@ namespace Infraestructure.Repository
             }
         }
 
+        public (string, string) Reader(string path)
+        {
+            string Read = "";
+            using (FileStream fileStream = new FileStream(path, FileMode.Open, FileAccess.Read))
+            {
+                binaryReader = new BinaryReader(fileStream);
+                long length = binaryReader.BaseStream.Length;
+
+                binaryReader.BaseStream.Seek(0, SeekOrigin.Begin);
+                while (binaryReader.BaseStream.Position < length)
+                {
+                    Read = binaryReader.ReadString();
+                }
+
+                return (path, Read);
+            }
+        }
+
         public string Save(string path, string note)
         {
             try

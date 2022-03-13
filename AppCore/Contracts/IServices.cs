@@ -15,5 +15,7 @@ namespace AppCore.Contracts
 
         string Save(string path, string note);
 
+        (string, string) Reader(string path);
+
     }
 }

@@ -18,7 +18,8 @@ namespace TreeView.Forms
     public partial class FrmNotes : Form
     {
         private INoteServices noteServices;
-
+        private string dir = "";
+        private DirectoryInfo directoryInfo;
         public FrmNotes(INoteServices noteServices)
         {
             InitializeComponent();
@@ -83,9 +84,22 @@ namespace TreeView.Forms
         {
             try
             {
+                FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+                string path = "";
+
+                if (folderBrowserDialog.ShowDialog().Equals(DialogResult.OK))
+                {
+                    path = folderBrowserDialog.SelectedPath;
+                }
+                if (path == null)
+                {
+                    return;
+                }
+                dir = path;
+
                 treeView1.Nodes.Clear();
                 IDirectory directory = new AppCore.Processes.View();
-                DirectoryInfo directoryInfo = new DirectoryInfo(FolderBrowser.FolderBw());
+                directoryInfo = new DirectoryInfo(dir);
                 treeView1.Nodes.Add(directory.PopulateTreeView(directoryInfo));
             }
             catch (Exception ex)
@@ -177,5 +191,31 @@ namespace TreeView.Forms
         }
 
         #endregion
+
+        private void FrmNotes_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Charge()
+        {
+
+        }
+
+        private void treeView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            string carpeta = treeView1.SelectedNode.FullPath;
+            DirectoryInfo directoryInfo = new DirectoryInfo(dir);
+
+            //Cadena para abrir el archivo
+            string path = directoryInfo.FullName + carpeta.Remove(0,directoryInfo.Name.Length);
+
+
+            if (carpeta.Contains(".txt"))
+            {
+                MessageBox.Show(path);
+                (lblNameFile.Text, rtxNotes.Text) = noteServices.Reader(path);
+            }
+        }
     }
 }
