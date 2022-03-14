@@ -197,11 +197,6 @@ namespace TreeView.Forms
 
         }
 
-        private void Charge()
-        {
-
-        }
-
         private void treeView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             string carpeta = treeView1.SelectedNode.FullPath;
@@ -213,9 +208,18 @@ namespace TreeView.Forms
 
             if (carpeta.Contains(".txt"))
             {
-                MessageBox.Show(path);
                 (lblNameFile.Text, rtxNotes.Text) = noteServices.Reader(path);
             }
+        }
+
+        private void lblAppName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPegar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

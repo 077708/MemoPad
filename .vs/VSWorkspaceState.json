@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\Infraestructure",
-    "\\Infraestructure\\Repository"
+    "\\Infraestructure\\Repository",
+    "\\TreeView",
+    "\\TreeView\\Forms"
   ],
-  "SelectedNode": "\\Infraestructure\\Repository\\StreamNoteRepository.cs",
+  "SelectedNode": "\\TreeView\\Forms\\FrmNotes.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -81,3 +81,7 @@ C:\Users\Paulo Mayorga\Source\Repos\077708\MemoPad\TreeView\obj\Debug\TreeView.c
 C:\Users\Paulo Mayorga\Source\Repos\077708\MemoPad\TreeView\obj\Debug\TreeView.csproj.CopyComplete
 C:\Users\Paulo Mayorga\Source\Repos\077708\MemoPad\TreeView\obj\Debug\TreeView.exe
 C:\Users\Paulo Mayorga\Source\Repos\077708\MemoPad\TreeView\obj\Debug\TreeView.pdb
+C:\Users\Paulo Mayorga\Source\Repos\077708\MemoPad\TreeView\bin\Debug\TreeView.exe.manifest
+C:\Users\Paulo Mayorga\Source\Repos\077708\MemoPad\TreeView\bin\Debug\TreeView.application
+C:\Users\Paulo Mayorga\Source\Repos\077708\MemoPad\TreeView\obj\Debug\TreeView.exe.manifest
+C:\Users\Paulo Mayorga\Source\Repos\077708\MemoPad\TreeView\obj\Debug\TreeView.application
